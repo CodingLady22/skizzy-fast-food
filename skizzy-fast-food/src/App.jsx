@@ -1,15 +1,17 @@
-import { Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import '../src/scss/styles.scss'
 import Nav from './components/Nav'
+import Header from './components/Header'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <Routes>
+      <Router>
         <Nav />
-      </Routes>
+        <Header />
+      </Router>
     </>
   )
 }
