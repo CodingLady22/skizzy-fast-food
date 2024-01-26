@@ -3,7 +3,7 @@ import { HashLink as Link } from 'react-router-hash-link'
 function Nav() {
   return (
     <div>
-        <nav className="navbar navbar-expand-lg fixed-top opacity-hover-off" id='myNavbar'>
+        <nav className="navbar navbar-expand-md fixed-top opacity-hover-off" id='myNavbar'>
         <div className="container-fluid">
             <ul className="navbar-nav">
                 <li className="nav-item">
