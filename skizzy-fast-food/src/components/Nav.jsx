@@ -1,4 +1,5 @@
 import { HashLink as Link } from 'react-router-hash-link'
+import Cart from './cart/Cart'
 
 function Nav() {
   return (
@@ -23,6 +24,7 @@ function Nav() {
                 </li>
             </ul>
         </div>
+        <Cart />
     </nav>
     </div>
   )
