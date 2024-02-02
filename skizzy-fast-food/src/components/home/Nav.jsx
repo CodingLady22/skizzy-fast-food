@@ -1,5 +1,5 @@
 import { HashLink as Link } from 'react-router-hash-link'
-import Cart from './cart/Cart'
+import Cart from '../cart/Cart'
 
 function Nav() {
   return (
