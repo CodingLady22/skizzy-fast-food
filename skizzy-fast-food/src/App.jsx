@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import '../src/scss/styles.scss'
-import Nav from './components/home/Nav'
-import Header from './components/home/Header'
-import Menu from './components/home/Menu'
+import Home from './components/home/Home'
 import './App.css'
 
 function App() {
@@ -10,9 +8,7 @@ function App() {
   return (
     <>
       <Router>
-        <Nav />
-        <Header />
-        <Menu />
+        <Home />
       </Router>
     </>
   )
