@@ -4,6 +4,7 @@ import Header from "./Header";
 import Menu from "./Menu";
 import About from "./About";
 import Contact from "./Contact";
+import Footer from "./Footer";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <Menu />
         <About />
         <Contact />
+        <Footer />
     </div>
   )
 }
