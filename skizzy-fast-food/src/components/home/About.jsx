@@ -1,5 +1,5 @@
 import freeBurgers from "../../assets/tetiana-shevereva-unsplash.jpg"
-import chef from "../../assets/febrian-zakaria-unsplash.jpg"
+import boss from "../../assets/skizzy_boss.jpg"
 
 function About() {
   return (
@@ -31,12 +31,12 @@ function About() {
                     <p className="fs-4"><b>The Owner</b> Mrs Oma herself, Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ratione id quod? Obcaecati tempore iure, atque, placeat officiis, magnam id minima dicta saepe iste consequatur quos necessitatibus optio nesciunt. Quae rerum est quibusdam porro voluptate natus quis animi, cumque eius! </p>
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-12">
-                    <img src={chef} alt="Bar Photo by Tetiana Shevereva on Unsplash" width={"170px"} className="rounded-pill" />
+                    <img src={boss} alt="An image of the restaurant owner" width={"170px"} className="rounded-pill" />
                 </div>
             </div>
 
             <p className="fs-2">We are proud of our stuff.</p>
-            <img src={freeBurgers} alt="Chef Photo by Febrian Zakaria on Unsplash" width={"100%"} className="my-3 img-greyscale" />
+            <img src={freeBurgers} alt="Bar Photo by Tetiana Shevereva on Unsplash" width={"100%"} className="my-3 img-greyscale" />
         </div>
     </div>
   )
