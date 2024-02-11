@@ -110,26 +110,34 @@ Custom Styles for Contact
 
 /*************************************************************************************************************************************************************************************************
 **************************************
-Custom Styles for About
+Custom Styles for Auth pages
 ***************************************************************************************************************************************************************************************************************************************/
 
 .login-section {
   height: 100vh;
-  border: 2px solid black;
-  background: rgba(134, 25, 25, 0.5);
+  /* border: 2px solid black; */
+  /* background: rgba(134, 25, 25, 0.5); */
 }
 
 .login-page {
-  margin: 50px;
-  /* border: 2px solid black; */
+  margin: 100px 0;
+  /* border: 2px solid green; */
+  /* background: rgba(134, 25, 25, 0.5); */
 }
 
-form {
-  width: 30%;
+.formSection {
+  border: 2px solid rgba(134, 25, 25, 0.5);
+  color: rgba(134, 25, 25, 0.8);
+  width: 40%;
   background-color: white;
   padding: 50px;
   border-radius: 10px;
   margin-top: 70px;
+}
+
+.form-link {
+  color: rgba(46, 2, 2, 0.8);
+  text-decoration: none;
 }
 
 .login-btn {
@@ -146,3 +154,5 @@ form {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 4px 4px 0 0;
 } */
+
+/* Add media query for buttons to be 50% on wider screens */
