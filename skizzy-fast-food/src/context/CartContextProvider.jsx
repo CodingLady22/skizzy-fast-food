@@ -26,8 +26,13 @@ function CartContextProvider(props) {
       setCartItem((prev) => ({...prev, [menuId]: prev[menuId] - 1}))
     }
 
+    // Function to directly change the quantity of an item in the cart
+    const updateCartItemCount = (newAmount, itemId) => {
+      setCartItem(prev => ({ ...prev, [itemId]: newAmount }));
+    }
+
     // Passing our values out as state
-    const contextValue = { cartItem, addToCart, removeFromCart };
+    const contextValue = { cartItem, addToCart, removeFromCart, updateCartItemCount };
 
   return (
     <CartContext.Provider value={contextValue}>{props.children}</CartContext.Provider>
