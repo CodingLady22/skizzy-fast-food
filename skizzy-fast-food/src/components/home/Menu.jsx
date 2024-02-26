@@ -77,8 +77,8 @@ function Menu() {
             <div key={item.id} className="mb-3">
               <h3>{item.name}</h3>
               <p>{item.ingredients}</p>
-              <p>€{item.price}</p>
-              <button className='menu-btn'  onClick={() => addToCart(item)}>
+              <p>€{item.price.toFixed(2)}</p>
+              <button className='menu-btn px-3'  onClick={() => addToCart(item)}>
                 {cart.find(cartItem => cartItem.id === item.id) ? 'Remove from Cart' : 'Add to Cart'}
               </button>
               <span className="mx-4 pl-4 text-danger">{addedItemMessages[item.id]}</span>
