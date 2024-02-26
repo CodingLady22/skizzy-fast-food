@@ -1,9 +1,18 @@
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import menuItems from "../../menuItems"
 import { CartContext } from "../../context/cartContextProvider"
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 import CartItem from "./CartItem"
+import DeliveryOptions from './DeliveryOptions';
 
 function CartPage() {
+
+  let navigate = useNavigate()
+
+  function handleClick() {
+    navigate("/#menu")
+  }
 
   const { cartItem, addToCart, removeFromCart, updateCartItemCount } = useContext(CartContext);
   const cartIsEmpty = Object.values(cartItem).every(quantity => quantity === 0);
@@ -16,8 +25,12 @@ function CartPage() {
 
   console.log(subTotal);
 
+
   return (
-    <section className='container cart-section p-5'>
+    <section className='cart-section'>
+      <Container fluid>
+      <Row>
+        <Col lg={9} md={8} xs={12}>
         <h1 className="mb-5 text-center">Your Cart Items</h1>
       <div className="">
         {cartIsEmpty ? (
@@ -28,17 +41,17 @@ function CartPage() {
             const menuItem = menuItems.find(item => item.id === itemId);
             if(quantity !== 0 && menuItem) {
               return (
-                <div className="col-sm-5">
+                <div className="col-sm-4">
                   <div className="">
                   <div key={itemId} className="card mb-3 p-3">
                     <CartItem data={menuItem} quantity={quantity} />
                     <div className="mb-2">
-                      <button className="btn btn-outline-secondary fw-bold" onClick={() => removeFromCart(itemId)}> - </button>
+                      <button className="special-btn  fw-bold" onClick={() => removeFromCart(itemId)}> - </button>
                       <input type="text" 
                         value={quantity}
                         onChange={(e) => updateCartItemCount(Number(e.target.value), itemId)}
                         className="cart-input text-center mx-2" />
-                      <button className="btn btn-outline-secondary fw-bold" onClick={() => addToCart(itemId)}> + </button>
+                      <button className="special-btn" onClick={() => addToCart(itemId)}> + </button>
                     </div>
                   </div>
                 </div>
@@ -47,16 +60,24 @@ function CartPage() {
             }
             return null;
           })}
-          <div className="col">
-            <div className="">
-              <p>Subtotal: €{subTotal.toFixed(2)}</p>
-              <button className="btn btn-outline-primary">Checkout</button>
-              <button className="btn btn-outline-success">Back to Menu</button>
-            </div>
-          </div>
         </div>
         )}
       </div>
+      </Col>
+      <Col lg={3} md={4} sm={12} className='border border-light-subtle py-5 px-3 100vh mb-5'>
+          <div className="col">
+            <div className="">
+              <p>Subtotal: €{subTotal.toFixed(2)}</p>
+            </div>
+          </div>
+          {/* Add code for delivery options */}
+          <div>
+            <button className="btn btn-outline-primary me-2">Checkout</button>
+            <button onClick={handleClick} className="btn btn-outline-success ms-2">Back to Menu</button>
+          </div>
+      </Col>
+      </Row>
+      </Container>
     </section>
   )
 }
