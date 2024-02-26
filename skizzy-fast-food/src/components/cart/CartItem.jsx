@@ -6,7 +6,7 @@ function CartItem(props) {
         <div>
             {name}
         </div>
-        <div>{price}</div>
+        <div>€{price.toFixed(2)}</div>
     </div>
   )
 }
