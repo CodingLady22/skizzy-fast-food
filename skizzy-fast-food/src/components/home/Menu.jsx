@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useContext,useState } from 'react';
+import { CartContext } from '../../context/cartContextProvider';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
 import menuItems from '../../menuItems';
 
 function Menu() {
+
+  // import the addToCart context from the cartContextProvider
+  const { addToCart: addToCartContext, removeFromCart: removeFromCart } = useContext(CartContext);
 
   // Set default initial menu to the first category in the array
     const [selectedCategory, setSelectedCategory] = useState(menuItems[0].category);
@@ -22,6 +26,7 @@ function Menu() {
 
     const addToCart = (item) => {
       if(cart.find(cartItem => cartItem.id === item.id)) {
+        removeFromCart(item.id)
         // if item is already in the cart, remove it
         setCart(prevCart => prevCart.filter(cartItem => cartItem.id !== item.id));
         setAddedItemMessages(prevMessages => ({
@@ -29,6 +34,8 @@ function Menu() {
           [item.id] : `${item.name} removed from cart`,
         }));
       } else {
+        // Call addToCart from CartContextProvider
+        addToCartContext(item.id);
         // if item is not in the cart, add it
         setCart(prevCart => [...prevCart, item]);
         setAddedItemMessages(prevMessages => ({
@@ -70,8 +77,8 @@ function Menu() {
             <div key={item.id} className="mb-3">
               <h3>{item.name}</h3>
               <p>{item.ingredients}</p>
-              <p>€{item.price}</p>
-              <button className='menu-btn'  onClick={() => addToCart(item)}>
+              <p>€{item.price.toFixed(2)}</p>
+              <button className='menu-btn px-3'  onClick={() => addToCart(item)}>
                 {cart.find(cartItem => cartItem.id === item.id) ? 'Remove from Cart' : 'Add to Cart'}
               </button>
               <span className="mx-4 pl-4 text-danger">{addedItemMessages[item.id]}</span>

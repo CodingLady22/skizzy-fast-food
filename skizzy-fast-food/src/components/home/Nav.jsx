@@ -18,9 +18,14 @@ function Nav() {
             <ul className="navbar-nav">
                 {/* Do not display home route link on the home route */}
                 {!isHomePage() && (
-                    <li className="nav-item">
-                        <Link className='nav-link' to="/">Home</Link>
-                    </li>
+                    <>
+                        <li className="nav-item">
+                            <Link className='nav-link' to="/">Home</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className='nav-link' to="/cartPage">Cart</Link>
+                        </li>
+                    </>
                 )}
                 
                 {/* Display only these links on the home route  */}

@@ -61,12 +61,13 @@ Custom Styles for Header
   border: 5px solid black;
 }
 
-/* Cart Icon */
+/* Cart Icon. Other styling for cart are below*/
 
 .cart-icon {
   width: 2rem;
   height: 1.35rem;
 }
+
 
 
 /*************************************************************************************************************************************************************************************************
@@ -156,3 +157,41 @@ Custom Styles for Auth pages
 } */
 
 /* Add media query for buttons to be 50% on wider screens */
+
+
+
+/*************************************************************************************************************************************************************************************************
+**************************************
+Custom Styles for cart page
+***************************************************************************************************************************************************************************************************************************************/
+
+.cart-section {
+  /* border: 2px solid green; */
+  margin-top: 70px;
+}
+
+.cart-item {
+  /* border: 2px solid red; */
+  padding: 5px;
+}
+
+.cart-input {
+  width: 2rem;
+}
+
+/* To turn the cartIcon white on hover. Not working currently */
+/* .cart-hover:hover {
+  color: white;
+} */
+
+.special-btn {
+  width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.special-btn:hover {
+  background: rgba(34, 24, 24, 0.842);
+  color: white;
+}
