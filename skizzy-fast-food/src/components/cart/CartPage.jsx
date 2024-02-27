@@ -30,7 +30,7 @@ function CartPage() {
     <section className='cart-section'>
       <Container fluid>
       <Row>
-        <Col lg={9} md={8} xs={12}>
+        <Col lg={9} md={8} xs={12} className='bg-secondary-subtle'>
         <h1 className="mb-5 text-center">Your Cart Items</h1>
       <div className="">
         {cartIsEmpty ? (
@@ -64,16 +64,20 @@ function CartPage() {
         )}
       </div>
       </Col>
-      <Col lg={3} md={4} sm={12} className='border border-light-subtle py-5 px-3 100vh mb-5'>
-          <div className="col">
-            <div className="">
-              <p>Subtotal: €{subTotal.toFixed(2)}</p>
+      <Col lg={3} md={4} sm={12} className='py-5 px-3 100vh mb-5'>
+          <div className='sticky-top mt-5'>
+            <div className="col">
+              <div className="">
+                <p className='fw-bold fs-4'>Subtotal: <span className='fw-normal text-primary'>€{subTotal.toFixed(2)}</span></p>
+              </div>
             </div>
-          </div>
-          {/* Add code for delivery options */}
-          <div>
-            <button className="btn btn-outline-primary me-2">Checkout</button>
-            <button onClick={handleClick} className="btn btn-outline-success ms-2">Back to Menu</button>
+            <div>
+              <DeliveryOptions cartIsEmpty={cartIsEmpty} />
+            </div>
+            <div>
+              <button className="btn btn-outline-primary me-2">Checkout</button>
+              <button onClick={handleClick} className="btn btn-outline-success ms-2">Back to Menu</button>
+            </div>
           </div>
       </Col>
       </Row>
